@@ -1,0 +1,18 @@
+{%extends 'base.html'%}
+{% load static  %}
+    {% block head %}
+    <link rel="stylesheet" href="{%static 'index.css' %}">
+    {% endblock%}
+    {% block content%}
+    <h1>Welcome to our PetStop Project</h1>
+    <h2>Here you will see the offer related to the items or the pets </h2>
+    <div id="slider">
+        <figure>
+            <img class="img-size" src="{%static 'images/pexels-christian-domingues-731022.jpg' %}" alt="my image">
+            <img class="img-size" src="{%static 'images/pexels-evg-kowalievska-1170986.jpg' %}" alt="my image">
+            <img class="img-size" src="{%static 'images/pexels-helena-lopes-2253275.jpg' %}" alt="my image">
+            <img class="img-size" src="{%static 'images/pexels-ihsan-adityawarman-1056251.jpg' %}" alt="my image">
+            <img class="img-size" src="{%static 'images/pexels-cats-coming-1543793.jpg' %}" alt="my image">
+        </figure>
+    </div>
+    {% endblock %}

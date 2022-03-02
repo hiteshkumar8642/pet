@@ -1,0 +1,48 @@
+body{
+  background: #f9f9f9;
+  font-size: 20px;
+  margin-top: 20px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.main-title{
+  color: #2d2d2d;
+  text-align: center;
+  text-transform: capitalize;
+  padding: 0.7em 0;
+}
+.img-size{
+    object-fit: cover;
+}
+@keyframes slidy {
+0% { left: 0%; }
+20% { left: 0%; }
+25% { left: -100%; }
+45% { left: -100%; }
+50% { left: -200%; }
+70% { left: -200%; }
+75% { left: -300%; }
+95% { left: -300%; }
+100% { left: -400%; }
+}
+
+
+div#slider {
+  overflow: hidden;
+  height: 500px;
+}
+div#slider figure img {
+  width: 20%;
+  height:500px;
+  float: left;
+}
+div#slider figure {
+  position: relative;
+  width: 500%;
+  margin: 0;
+  left: 0;
+  text-align: left;
+  font-size: 0;
+  animation: 30s slidy infinite;
+}

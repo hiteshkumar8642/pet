@@ -1,0 +1,160 @@
+{%extends 'base.html'%}
+{% load static  %}
+{% block head%}
+<link rel="stylesheet" href="{%static 'item.css' %}">
+{% endblock%}
+{% block content%}
+</center>
+<!-- Trigger/Open The Modal -->
+<button style="float:right" id="add-item-btn">Add Item</button>
+
+<!-- The Modal -->
+<div id="add-modal" class="modal">
+	<!-- Modal content -->
+	<div class="modal-content">
+		<span class="add-modal-close">&times;</span>
+		<div class="center1">
+			<div class="box" >
+				<form action="{% url 'item' %}" method="post">
+					{% csrf_token %}
+					<div class="container">
+
+						<label for="name"><b>Item Name</b></label>
+						<input type="text" placeholder="Enter Item name" name="name" required>
+						<label for="Cost Price"><b>Cost Price</b></label>
+						<input type="number" placeholder="Enter Price" name="cost_price" required>
+						<label for="Sell Price"><b>Selling Price</b></label>
+						<input type="number" placeholder="Enter Price" name="sell_price" required>
+						<label for="qty"><b>Quantity</b></label>
+						<input type="number" placeholder="Enter Quantity" name="qty" required>
+						<label for="qty_type"><b>Quantity Type</b></label>
+						<input type="text" placeholder="Enter Quantity Type" name="qty_type" required>
+						<button style="width:100%" type="submit">Add item</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<input type="text" id="myInput" onkeyup="search()" placeholder="Search for names..">
+<table id="myTable">
+    <tr>
+        <th>Item ID.</th>
+		<th>Name</th>
+		<th>Quantity</th>
+		<th>Quantity Type</th>
+		<th>Cost Price</th>
+		<th>Selling Price</th>
+		<th>Modify</th>
+		<th>Delete</th>
+    </tr>
+    {% for x in objs %}
+    <tr>
+        <td>{{ x.item.id }}</td>
+        <td>{{ x.item.name }}</td>
+		<td>{{ x.qty }}</td>
+		<td>{{ x.item.qty_type }}</td>
+		<td>{{ x.item.cost_price }}</td>
+		<td>{{ x.sell_price }}</td>
+		<td><div class=center> <button class="btn edit" id="edit-btn"><i class="fa fa-edit "></i></button></div></td>
+		<div id="modify-modal" class="modal">
+		<!-- Modal content -->
+		<div class="modal-content">
+			<span class="edit-modal-close">&times;</span>
+				<div class="center1">
+					<div class="box" >
+						<form action="{% url 'modify' x.item.id %}" method="post">
+							{% csrf_token %}
+							<div class="container">
+
+								<label for="name"><b>Item Name</b></label>
+								<input type="text" value="{{ x.item.name }}" name="name" required>
+								<label for="Cost Price"><b>Cost Price</b></label>
+								<input type="number" value="{{ x.item.cost_price }}" name="cost_price" required>
+								<label for="Sell Price"><b>Selling Price</b></label>
+								<input type="number" value="{{ x.sell_price }}" name="sell_price" required>
+								<label for="qty"><b>Quantity</b></label>
+								<input type="number" value="{{ x.qty }}" name="qty" required>
+								<label for="qty_type"><b>Quantity Type</b></label>
+								<input type="text" value="{{ x.item.qty_type }}" name="qty_type" required>
+								<button style="width:100%" type="submit">Modify item</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<td><a href={% url 'delete' x.item.id %}><div class=center> <button class="btn"><i class="fa fa-trash "></i></button></div></a></td>
+    </tr>
+    {% endfor %}
+</table>
+
+
+<script>
+function search() {
+  // Declare variables
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+// Get the modal
+var addModal = document.getElementById("add-modal");
+var modifyModal = document.getElementById("modify-modal");
+// Get the button that opens the modal
+var addBtn = document.getElementById("add-item-btn");
+var editBtns = document.getElementsByClassName("edit");    // Array of all edit btns
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("add-modal-close")[0];
+var span1 = document.getElementsByClassName("edit-modal-close")[0];
+// When the user clicks the button, open the modal
+addBtn.onclick = function() {
+  addModal.style.display = "block";
+}
+
+for(var i = 0; i < editBtns.length; i++) {
+	editBtn = editBtns[i];
+	editBtn.onclick = function() {
+		modifyModal.style.display = "block";
+	}
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  addModal.style.display = "none";
+
+}
+span1.onclick = function() {
+  modifyModal.style.display = "none";
+
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == addModal) {
+    addModal.style.display = "none";
+
+  }
+  if (event.target == modifyModal) {
+    modifyModal.style.display = "none";
+
+  }
+}
+</script>
+{% endblock %}
