@@ -18,16 +18,17 @@
 <ul class=base-ul>
     <div>
         <li class=base-li-img><a class="base-active base" href="/"><img height="45px" width="60px" src="{%static 'images/icon.jpeg' %}" alt="PetStop"></a></li>
-        <li class=base-li><a class="base-active base" href="#">Pet health tracker</a></li>
+        <li class=base-li><a class="base-active base" href="{% url 'pet' %}">Pet health tracker</a></li>
         <li class=base-li><a class=base href="{% url 'pshop' %}">Buying Selling of Pet</a></li>
         <li class=base-li><a class=base href="{% url 'ishop' %}">Buy Pet accessories</a></li>
+        <li class=base-li><a class=base href="{% url 'contactus' %}">Contact Us</a></li>
+        <li class=base-li><a class=base href="{% url 'aboutus' %}">Our Team</a></li>
+        <li class=base-li><a class=base href="{% url 'faq' %}">FAQs</a></li>
         {%if request.user.is_superuser%}
         <li class="dropdown base-li">
             <a href="javascript:void(0)" class="dropbtn">Manage</a>
             <div class="dropdown-content">
-                <a href="{% url 'item' %}"">Item</a>
-                <a href="#">User</a>
-                <a href="#">Pet</a>
+                <a href="{% url 'item' %}">Item</a>
             </div>
         </li>
         {%endif%}
@@ -35,7 +36,7 @@
     {%if request.user.is_authenticated%}
 
     <div>
-        <li style="float:right" class=base-li><a class=base href="logout">Logout</a></li>
+        <li style="float:right" class=base-li><a class=base href="{% url 'logout' %}">Logout</a></li>
         {%else%}
         <li style="float:right" class=base-li><a class=base href="{% url 'sign_in' %}">Sign in/Register</a></li>
         {%endif%}

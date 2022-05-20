@@ -15,7 +15,7 @@
 		<span class="add-modal-close">&times;</span>
 		<div class="center1">
 			<div class="box" >
-				<form action="{% url 'item' %}" method="post">
+				<form action="{% url 'item' %}" method="post" enctype="multipart/form-data">
 					{% csrf_token %}
 					<div class="container">
 
@@ -23,12 +23,16 @@
 						<input type="text" placeholder="Enter Item name" name="name" required>
 						<label for="Cost Price"><b>Cost Price</b></label>
 						<input type="number" placeholder="Enter Price" name="cost_price" required>
-						<label for="Sell Price"><b>Selling Price</b></label>
-						<input type="number" placeholder="Enter Price" name="sell_price" required>
+						<label for="Sell Price"><b>Color</b></label>
+						<input type="text" placeholder="Enter color" name="color" required>
 						<label for="qty"><b>Quantity</b></label>
 						<input type="number" placeholder="Enter Quantity" name="qty" required>
 						<label for="qty_type"><b>Quantity Type</b></label>
 						<input type="text" placeholder="Enter Quantity Type" name="qty_type" required>
+						<label for="des"><b>Description</b></label>
+						<input type="text" placeholder="Enter description" name="des" required>
+						<label for="upload"><b>Image</b></label>
+						<input type="file" name="upload">
 						<button style="width:100%" type="submit">Add item</button>
 					</div>
 				</form>
@@ -45,53 +49,25 @@
 		<th>Quantity</th>
 		<th>Quantity Type</th>
 		<th>Cost Price</th>
-		<th>Selling Price</th>
-		<th>Modify</th>
-		<th>Delete</th>
+		<th>Description</th>
     </tr>
     {% for x in objs %}
     <tr>
-        <td>{{ x.item.id }}</td>
-        <td>{{ x.item.name }}</td>
-		<td>{{ x.qty }}</td>
-		<td>{{ x.item.qty_type }}</td>
-		<td>{{ x.item.cost_price }}</td>
-		<td>{{ x.sell_price }}</td>
-		<td><div class=center> <button class="btn edit" id="edit-btn"><i class="fa fa-edit "></i></button></div></td>
-		<div id="modify-modal" class="modal">
-		<!-- Modal content -->
-		<div class="modal-content">
-			<span class="edit-modal-close">&times;</span>
-				<div class="center1">
-					<div class="box" >
-						<form action="{% url 'modify' x.item.id %}" method="post">
-							{% csrf_token %}
-							<div class="container">
+        <td>{{ x.id }}</td>
+        <td>{{ x.item_name }}</td>
+		<td>{{ x.quantity }}</td>
+		<td>{{ x.type }}</td>
+		<td>{{ x.mrp }}</td>
+		<td>{{ x.description }}</td>
 
-								<label for="name"><b>Item Name</b></label>
-								<input type="text" value="{{ x.item.name }}" name="name" required>
-								<label for="Cost Price"><b>Cost Price</b></label>
-								<input type="number" value="{{ x.item.cost_price }}" name="cost_price" required>
-								<label for="Sell Price"><b>Selling Price</b></label>
-								<input type="number" value="{{ x.sell_price }}" name="sell_price" required>
-								<label for="qty"><b>Quantity</b></label>
-								<input type="number" value="{{ x.qty }}" name="qty" required>
-								<label for="qty_type"><b>Quantity Type</b></label>
-								<input type="text" value="{{ x.item.qty_type }}" name="qty_type" required>
-								<button style="width:100%" type="submit">Modify item</button>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<td><a href={% url 'delete' x.item.id %}><div class=center> <button class="btn"><i class="fa fa-trash "></i></button></div></a></td>
-    </tr>
     {% endfor %}
 </table>
 
-
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
 <script>
 function search() {
   // Declare variables

@@ -2,72 +2,19 @@
 {% load static  %}
 {% block head %}
 <link rel="stylesheet" href="{%static 'pshop.css' %}">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 {% endblock%}
 {% block content%}
 <!--Changing the number in the column_# class changes the number of columns-->
-<div id="wrap">
-    <div id="columns" class="columns_4">
-        <figure>
-            <img src="{%static 'images/pexels-cats-coming-1543793.jpg' %}" alt="my image">
-            <figcaption>Green Checkered Shirt</figcaption>
-            <span class="price">$44</span>
-            <a class="button" href="{% url 'checkout' %}">Book Now</a>
-        </figure>
 
-        <figure>
-            <img src="{%static 'images/pexels-cats-coming-1543793.jpg' %}">
-            <figcaption>Green and Black Flowers</figcaption>
-            <span class="price">$44</span>
-            <a class="button" href="{% url 'checkout' %}">Book Now</a>
-        </figure>
-
-        <figure>
-            <img src="{%static 'images/pexels-cats-coming-1543793.jpg' %}">
-            <figcaption>Black Dots</figcaption>
-            <span class="price">$44</span>
-            <a class="button" href="{% url 'pcheckout' %}">Book Now</a>
-        </figure>
-
-        <figure>
-            <img src="{%static 'images/pexels-cats-coming-1543793.jpg' %}">
-            <figcaption>Red Flowy</figcaption>
-            <span class="price">$44</span>
-            <a class="button" href="{% url 'pcheckout' %}">Book Now</a>
-        </figure>
-
-        <figure>
-            <img src="{%static 'images/pexels-cats-coming-1543793.jpg' %}">
-            <figcaption>Yellow Button-Up</figcaption>
-            <span class="price">$44</span>
-            <a class="button" href="{% url 'pcheckout' %}">Book Now</a>
-        </figure>
-
-        <figure>
-            <img src="{%static 'images/pexels-cats-coming-1543793.jpg' %}">
-            <figcaption>Put a Bird On It</figcaption>
-            <span class="price">$44</span>
-            <a class="button" href="{% url 'pcheckout' %}">Book Now</a>
-        </figure>
-
-        <figure>
-            <img src="{%static 'images/pexels-cats-coming-1543793.jpg' %}">
-            <figcaption>Polka Dots</figcaption>
-            <span class="price">$44</span>
-            <a class="button" href="{% url 'pcheckout' %}">Book Now</a>
-        </figure>
-
-        <figure>
-            <img src="{%static 'images/pexels-cats-coming-1543793.jpg' %}">
-            <figcaption>Blue Spots</figcaption>
-            <span class="price">$44</span>
-            <a class="button" href="{% url 'pcheckout' %}">Book Now</a>
-        </figure>
-
-        <figure>
-            <img src="{%static 'images/pexels-cats-coming-1543793.jpg' %}">
-            <figcaption>Pink Dots</figcaption>
-            <span class="price">$44</span>
-            <a class="button" href="{% url 'pcheckout' %}">Book Now</a>
-        </figure>
-    </div>
+<div class="main-wrapper">
+  <div id="vue">
+<!--    <cart :cart="cart" :cart-sub-total="cartSubTotal" :tax="tax" :cart-total="cartTotal" :checkout-bool="checkoutBool"></cart>-->
+    <products :cart="cart" :cart-sub-total="cartSubTotal" :tax="tax" :cart-total="cartTotal" :products-data="productsData"></products>
+    <checkout-area v-if="checkoutBool" :cart="cart" :tax="tax" :cart-sub-total="cartSubTotal" :cart-total="cartTotal" :products-data="productsData" :total-with-tax="totalWithTax"></checkout-area>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.18/vue.min.js"></script>
+<script src="{%static 'pshop.js'%}">
+</script>
     {% endblock %}

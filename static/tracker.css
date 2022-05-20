@@ -1,0 +1,444 @@
+.inline-modifier {
+  display: in-line;
+}
+
+.add-new-pet:hover {background-color: lightblue;}
+ 
+.add-new-pet {
+  background-color: lightgrey;
+  background-image: url("http://delivery.friendlysniff.com/wp-content/uploads/2015/07/plus.png");
+  background-size: contain;
+  font-size: 1.5em;
+  height: 200px;
+  line-height: 75px;
+  margin-top: 10px;
+  text-align: center;
+  width: 275px;
+ }
+ 
+.pet-body-alert {text-align: center;}
+ 
+.clear {clear: both;}
+ 
+.pet-body {
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  font-weight: normal;
+  line-height: 1em;
+  text-align: left;
+ }
+ 
+.pet-picture {
+  background-image: url("http://delivery.friendlysniff.com/wp-content/uploads/2015/07/Dog-Profile.png");
+  background-size: contain;
+  border-radius: 50px;
+  float: left;
+  height: 80px;
+  margin: 20px;
+  width: 80px;
+ }
+ 
+.food-title {
+  font-size: 1.3em;
+  margin: 10px;
+ }
+ 
+.food-description {
+  font-size: 1em;
+  line-height: 50%;
+  margin-bottom: 15px;
+ }
+ 
+.btn {
+  -moz-border-radius: 6;
+  -webkit-border-radius: 6;
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  background: #3498db;
+  border-radius: 6px;
+  color: #ffffff;
+  display: inline;
+  font-family: Arial;
+  font-size: 15px;
+  margin-top: 10px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  text-decoration: none;
+ }
+ 
+  .btn:hover {
+    background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+    background: #3cb0fd;
+    text-decoration: none;
+   }
+ 
+ul#menu {padding: 0px;}
+ 
+  ul#menu li {display: inline;}
+ 
+    ul#menu li a {
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+     }
+ 
+      ul#menu li a:hover {
+        background-color: #033076;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+       }
+ 
+.footer {
+  background-color: #424242;
+  bottom: 0;
+  clear: both;
+  color: white;
+  height: 30px;
+  margin: -10px;
+  max-width: inherit;
+  padding: 5px 5px 30px 5px;
+  text-align: right;
+ }
+ 
+.petfood-picture {
+  float: left;
+  margin: 15px;
+  width: 70px;
+ }
+ 
+.petfood-container {
+  color: black;
+  margin-top: 1px;
+  padding: 0px;
+  perspective: 1000;
+  text-align: left;
+  width: 275px;
+  float:left;
+ }
+ 
+.alert-container {
+  background-image: url("http://delivery.friendlysniff.com/wp-content/uploads/2015/07/Alarm-Bell-Slash-Black.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  color: grey;
+  flex: 2 auto auto;
+  font-size: 2em;
+  height: 150px;
+  margin-top: 10px;
+  padding: 15px;
+  text-align: center;
+  width: 300px;
+ }
+ 
+.stat-container {
+  font-size: 4em;
+  height: 150px;
+  margin-top: 10px;
+  padding: 30px;
+  text-align: center;
+  width: 250px;
+ }
+ 
+.stat-number {
+  background-color: #3294D5;
+  border-radius: 100px;
+  color: white;
+ }
+ 
+.header-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  padding: 20px 0px 0px 50px;
+ }
+ 
+.header-label {
+  font-size: 1.7em;
+  margin-bottom: 25px;
+  text-align: left;
+ }
+ 
+.container-wrapper {
+  box-shadow: 2px 2px 4px;
+  margin: -10px;
+  max-width: 105%;
+ }
+ 
+.main-body {display: inline;}
+ 
+.alarm {
+  float: right;
+  height: inherit;
+  width: 35px;
+ }
+ 
+.shopping {
+  float: right;
+  height: inherit;
+  width: 35px;
+ }
+ 
+.logout {
+  color: white;
+  float: right;
+  height: 45px;
+  padding: 15px 0 0 5px;
+  width: 100px;
+  line-height: 35px;
+ }
+ 
+  .logout:hover {
+    background-color: #275D96;
+    color: white;
+    float: right;
+    width: 100px;
+   }
+ 
+.profile {
+  color: white;
+  float: right;
+  height: 45px;
+  line-height: 35px;
+  padding: 15px 0 0 0;
+  text-align: left;
+  width: 175px;
+ }
+ 
+  .profile:hover {
+    background-color: #275D96;
+    color: white;
+   }
+ 
+.column {
+  border-right: 1px solid lightgrey;
+  display: flex;
+  flex-flow: column wrap;
+  float: left;
+  justify-content: space-around;
+  margin-top: 0px;
+ }
+ 
+.column-filler {
+  max-width: 1400px;
+  width: 250px;
+ }
+ 
+.container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  padding: 15px;
+  
+ }
+
+.petstat-container {
+  display: flex;
+  flex-flow: row-wrap;
+  justify-content: flex-start;
+  padding: 15px;
+}
+ 
+.containertop {
+  background: #424242;
+  border-bottom: solid grey;
+  display: flex;
+  flex-flow: row wrap;
+  height: 60px;
+  justify-content: space-between;
+  padding: 1px;
+ }
+ 
+.profilecontainer {
+  background-color: #448999;
+  background-image: url("http://delivery.friendlysniff.com/wp-content/uploads/2015/07/Lake_mapourika_NZ.jpeg");
+  background-size: cover;
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-start;
+  padding: 25px 25px 25px 100px;
+ }
+ 
+.flex-sidemenu {
+  background: white;
+  color: grey;
+  font-size: 1em;
+  font-weight: bold;
+  height: 50px;
+  line-height: 50px;
+  padding 5px;
+  perspective: 1000;
+  text-align: center;
+  width: 200px;
+ }
+ 
+  .flex-sidemenu:hover {
+    background: #75A9F9;
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    height: 50px;
+    line-height: 50px;
+    margin-top: px;
+    padding 5px;
+    perspective: 1000;
+    text-align: center;
+    width: 200px;
+   }
+ 
+.flex-header-container {
+  color: white;
+  font-size: 1em;
+  font-weight: bold;
+  height: 50px;
+  line-height: 50px;
+  margin-top: 1px;
+  padding 5px;
+  perspective: 1000;
+  text-align: center;
+  width: 400px;
+ }
+ 
+.flip-container {perspective: 1000;}
+ 
+  .flip-container:hover {transform: rotateY(180deg);}
+ 
+.mainprofilepicture {
+  background-image: url("http://delivery.friendlysniff.com/wp-content/uploads/2015/07/Profile.png");
+  background-size: cover;
+  border-radius: 150px;
+  color: White;
+  font-size: 3em;
+  font-weight: bold;
+  height: 130px;
+  line-height: 150px;
+  margin-top: 10px;
+  padding 5px;
+  text-align: center;
+  width: 130px;
+ }
+ 
+  .mainprofilepicture:hover {
+    background-color: grey;
+    border-radius: 150px;
+    color: White;
+    font-size: 3em;
+    font-weight: bold;
+    height: 130px;
+    line-height: 150px;
+    margin-top: 10px;
+    opacity: 0.5;
+    padding 5px;
+    text-align: center;
+    width: 130px;
+   }
+ 
+.mainprofileinfo {
+  color: White;
+  height: 150px;
+  margin-left: 20px;
+  padding 0px;
+  width: 600px;
+ }
+ 
+.pet-dashboard-profile {
+  background: #F1F1F1;
+  box-shadow: 2px 2px 5px grey;
+  color: White;
+  font-size: 3em;
+  font-weight: bold;
+  height: 200px;
+  line-height: 40px;
+  margin-top: 10px;
+  padding 5px;
+  text-align: center;
+  width: 275px;
+ }
+ 
+.petgridtitle {
+  background-color: #275D96;
+  color: White;
+  font-size: .40em;
+  font-weight: bold;
+  height: 45px;
+  text-align: center;
+  width: 275px;
+ }
+ 
+.pet-dashboard-profile:hover {background: blue;}
+ 
+.trust-seal {
+  background-image: url("http://delivery.friendlysniff.com/wp-content/uploads/2015/07/Trust-E.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  font-color: #F7F6F6;
+  font-size: 2em;
+  height: 75px;
+  line-height: 75px;
+  margin-top: 25px;
+  text-align: center;
+  width: 200px;
+ }
+ 
+.advertisement {
+  background-color: lightgrey;
+  font-color: #F7F6F6;
+  font-size: 3em;
+  height: 400px;
+  line-height: 350px;
+  margin-top: 25px;
+  text-align: center;
+  width: 200px;
+ }
+
+.pet-profile-picture {
+  width: 130px;
+  height: 130px;
+  background-image: url("http://delivery.friendlysniff.com/wp-content/uploads/2015/07/Dog-Profile.png");
+  background-size: contain;
+  border-radius: 50px;
+  margin: 0 auto;
+}
+
+.pet-profile-picture-border {
+  width: 130px;
+  height: 130px;
+  background-color: #75A9F9;
+  border-radius: 200px;
+  padding: 10px 10px 10px 10px;
+}
+
+.rating {
+  padding: 0px 0 0 10px;
+  font-size: 1.5em;
+}
+
+.vetbox {
+  width: 400px;
+  background-color: #E9E9E9;
+  margin-left: 15px; 
+  padding: 15px;
+  box-shadow: 1px 1px 1px;
+}
+
+.vetboxtitle {
+  width: 400px;
+  background-color: #3498DB;
+  font-size: 1.4em;
+  padding: 15px;
+  color: white;
+  
+  
+}
+ 
+ 

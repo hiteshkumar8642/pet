@@ -9,7 +9,7 @@
 
 <div class="tools">
   <div class="settings">
-    <a href="{% url 'cart' %}" ><button >Checkout</button></a>
+    <a href="{% url 'cart' %}" ><button >Add new Pet</button></a>
     <button id="view">Switch View</button>
   </div>
 </div>
@@ -17,16 +17,17 @@
   {% for x in objs %}
   <div class="product">
     <div class="product-img">
-      <img src="{{x.item_pic.url}}">
+      <img src="{{x.pet_pic.url}}">
     </div>
     <div class="product-content">
       <h3>
-        {{x.item_name}}
+        {{x.pet_name}}
         <small>{{x.description}}</small>
       </h3>
-      <p class="product-text price">{{x.mrp}}</p>
+      <p class="product-text price">{{x.type}}</p>
+      <p class="product-text price">{{x.breed}}</p>
       <p class="product-text genre">Colour: {{x.color}}</p>
-      <a href="{% url 'cartadd' x.id %}" ><button>Add To cart</button></a>
+      <a href="{% url 'tracker'%}" ><button>view details</button></a>
     </div>
   </div>
 

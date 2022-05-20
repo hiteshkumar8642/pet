@@ -1,0 +1,54 @@
+{%extends 'base.html'%}
+{% load static  %}
+{% block head %}
+<link rel="stylesheet" href="{%static 'faq.css' %}">
+<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+{% endblock %}
+{% block content%}
+<h1>FAQ </h1>
+<div class="row">
+  <div class="col">
+    <div class="tabs">
+      <div class="tab">
+        <input type="checkbox" id="chck1">
+        <label class="tab-label" for="chck1">1)Can we cancel order?</label>
+        <div class="tab-content">
+          Yes You can cancel order anytime.
+        </div>
+      </div>
+      <div class="tab">
+        <input type="checkbox" id="chck2">
+        <label class="tab-label" for="chck2">2)In how many days will I get my refund</label>
+        <div class="tab-content">
+          Within 3 to 4 bussiness days you will get your refund in your bank account.
+        </div>
+      </div>
+      <div class="tab">
+        <input type="checkbox" id="chck3">
+        <label class="tab-label" for="chck3">3)Will I get any support about how to take proper care of pet?</label>
+        <div class="tab-content">
+          ->Yes while the time of delivery, our executive will provide all sorts of instructions, do's, dont's, diet, exercise. And you will not be charged for this.
+        </div>
+      </div>
+      <div class="tab">
+        <input type="checkbox" id="chck4">
+        <label class="tab-label" for="chck4">4)What if my money is deposited but order not placed?</label>
+        <div class="tab-content">
+          Wait for that day as sometimes it take full day to reflect the payment. Don't pay second time. After a day if same then contact our customer care by using following number +918735647594
+        </div>
+      </div>
+      <div class="tab">
+        <input type="checkbox" id="chck5">
+        <label class="tab-label" for="chck5">5)Where can you deliver products and pets?</label>
+        <div class="tab-content">
+          We deliver pets and products all over India, but some time it may take more time to deliver than usual to reach some places due to less connectivity.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+</div>
+<!--    <script type="text/javascript" src="{%static 'jquery-3.6.0.js' %}"></script>-->
+<!--<script src="{%static 'faq.js' %}">-->
+</div>{% endblock %}

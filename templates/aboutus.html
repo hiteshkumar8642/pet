@@ -1,0 +1,63 @@
+{%extends 'base.html'%}
+{% load static  %}
+{% block head %}
+<link rel="stylesheet" href="{%static 'aboutus.css' %}">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+{% endblock %}
+{% block content%}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-sm-6">
+            <div class="our-team">
+                <div class="pic">
+                    <img src="{%static 'images/yash.jpeg' %}" alt="team member" class="img-responsive">
+                </div>
+                <div class="content">
+                    <h3 class="title">Yash Wagaskar</h3>
+                    <span class="post">Web Developer</span>
+                    <ul class="social">
+                        <li><a href="#" class="fa fa-facebook"></a></li>
+                        <li><a href="#" class="fa fa-twitter"></a></li>
+                        <li><a href="#" class="fa fa-linkedin"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-sm-6">
+            <div class="our-team active">
+                <div class="pic">
+                    <img src="{%static 'images/hiteshphoto.jpeg' %}" class="img-responsive">
+                </div>
+                <div class="content">
+                    <h3 class="title">Hitesh Kumar</h3>
+                    <span class="post">Web Developer</span>
+                    <ul class="social">
+                        <li><a href="#" class="fa fa-facebook"></a></li>
+                        <li><a href="#" class="fa fa-twitter"></a></li>
+                        <li><a href="#" class="fa fa-linkedin"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+       <div class="col-md-4 col-sm-6">
+            <div class="our-team">
+                <div class="pic">
+                    <img src="{%static 'images/Roshan.jpeg' %}" alt="team member" class="img-responsive" width="500" height="600">
+                </div>
+                <div class="content">
+                    <h3 class="title">Roshan Singh</h3>
+                    <span class="post">Web Developer</span>
+                    <ul class="social">
+                        <li><a href="#" class="fa fa-facebook"></a></li>
+                        <li><a href="#" class="fa fa-twitter"></a></li>
+                        <li><a href="#" class="fa fa-linkedin"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
